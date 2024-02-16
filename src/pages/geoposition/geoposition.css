@@ -1,0 +1,97 @@
+.tracking {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://thumb.tildacdn.com/tild3537-6563-4232-b439-643337356538/-/format/webp/wp3704765-logistics-.jpg');
+    background-position: center;
+    background-size:cover;
+}
+
+.backgroundFilter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.NumberInput {
+    display:inline;
+}
+
+.information {
+    width: 700px;
+    height: fit-content;
+    margin-top: 100px;
+    backdrop-filter: blur(0px) saturate(200%);
+    -webkit-backdrop-filter: blur(0px) saturate(200%);
+    background-color: rgba(254, 254, 254, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.tracking table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+.tracking th {
+    text-align: left;
+    padding: 8px;
+  }
+  
+.tracking tr:nth-child(even) {
+    background-color: #dddddd79;
+}
+
+.leftRow {
+    border-right: 1px solid #dddddd;
+}
+
+#lastOneRight {
+    border-bottom-right-radius: 12px;
+}
+
+#lastOneLeft {
+    border-bottom-left-radius: 12px;
+}
+
+.NumberInput {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 54px;
+    top: 100px;
+
+}
+
+.findRef {
+    height: 57px;
+    left: 3px;
+}
+
+#filled-search {
+    backdrop-filter: blur(0px) saturate(200%);
+    -webkit-backdrop-filter: blur(0px) saturate(200%);
+    background-color: rgba(254, 254, 254, 0.75);
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    border-radius: 4px;
+}
+
+.wrongRef {
+    align-items: center;
+    height: 20px;
+    width: 200px;
+    margin-top: 65px;
+    margin-right: 87px;
+    backdrop-filter: blur(0px) saturate(200%);
+    -webkit-backdrop-filter: blur(0px) saturate(200%);
+    background-color: rgba(3, 0, 0, 0.623);
+    border-radius: 3px;
+}
+
+.wrongRefText {
+    font-family: 'Open Sans', sans-serif;font-size: 16px;font-weight:300;color: rgb(228, 208, 208);
+}

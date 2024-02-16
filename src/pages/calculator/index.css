@@ -1,0 +1,19 @@
+.calculator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 500px;
+    margin-top: 100px;
+    margin-left: 350px;
+    border: 1px solid rgb(156, 42, 8);
+    border-radius: 50px;
+}
+
+.butt {
+    top: 200px;
+}
+
+.posOne {
+    background-color: aqua;
+}
