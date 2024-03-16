@@ -9,25 +9,27 @@ export default function Geoposition() {
     const [show, setShow] = useState(undefined);
     
     const checkRefCode = async () => {
-        if(refCode != "") {
-            await fetch(`${backend}/api/find?ref=${refCode}`, {
-              headers: { 'Content-Type': 'apppcation/json' }
-              // credentials: 'include'
-            }).then((res) => {
-              if (res && res.status === 200) {
-                res.json().then((data) => {
-                    if(data.data === false) {
-                        setShow(false);
-                    } else {
-                        setArrayOfData(data.data)
-                        setShow(true);
-                    }
-                });
-              } else {
-                console.log("No Data");
-              }
-            })
-        } else setShow(undefined)
+        setShow(true);
+        setArrayOfData(['abobabebebubo','abobabebebubo','abobabebebubo','abobabebebubo','abobabebebubo','abobabebebubo','abobabebebubo','abobabebebubo','abobabebebubo','abobabebebubo'])
+        // if(refCode !== "") {
+        //     await fetch(`${backend}/api/find?ref=${refCode}`, {
+        //       headers: { 'Content-Type': 'apppcation/json' }
+        //       // credentials: 'include'
+        //     }).then((res) => {
+        //       if (res && res.status === 200) {
+        //         res.json().then((data) => {
+        //             if(data.data === false) {
+        //                 setShow(false);
+        //             } else {
+        //                 setArrayOfData(data.data)
+        //                 setShow(true);
+        //             }
+        //         });
+        //       } else {
+        //         console.log("No Data");
+        //       }
+        //     })
+        // } else setShow(undefined)
     }
 
     return(
@@ -43,7 +45,40 @@ export default function Geoposition() {
                 />
                 <Button variant="contained" className="findRef" onClick={(checkRefCode)}>find</Button>
             </div>
-            {show === true && (
+            <div className='info'>
+            {show === true && (<>
+                <div className="upperInfo">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th className="topRow">Количество:</th>
+                                <th className="topRow" id="topRowNonBorder">Вес:</th>
+                                <th className="topRow" id="topRowNonBorder">Объём:</th>
+                            </tr>
+                            <tr>
+                                <th>hello</th>
+                                <th id="topRowNonBorder">hello</th>
+                                <th id="topRowNonBorder">hello</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div className="midInfo">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th className="topRow">Откуда:</th>
+                                <th className="topRow">Куда:</th>
+                                <th className="topRow">Объём:</th>
+                            </tr>
+                            <tr>
+                                <th className="lowRow" >hello</th>
+                                <th className="lowRow" id="topRowNonBorder">hello</th>
+                                <th className="lowRow" id="topRowNonBorder">hello</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div className='information'>
                     <table>
                         <tbody>
@@ -90,8 +125,10 @@ export default function Geoposition() {
                         </tbody>
                     </table>
                 </div>
+            </>
             )}
-            {show === false && refCode != ""  && (
+            </div>
+            {show === false && refCode !== ""  && (
                 <div className="wrongRef NumberInput">
                     <p className="wrongRefText">Wrong reference number</p>
                 </div>

@@ -1,19 +1,200 @@
-.calculator {
+.calc-page {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://thumb.tildacdn.com/tild3537-6563-4232-b439-643337356538/-/format/webp/wp3704765-logistics-.jpg');
+    background-position: center;
+    background-size:cover;    
+}
+
+.calc-page-background-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.calc-main {
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
     width: 800px;
     height: 500px;
-    margin-top: 100px;
-    margin-left: 350px;
-    border: 1px solid rgb(156, 42, 8);
-    border-radius: 50px;
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.91);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
-.butt {
-    top: 200px;
+.calc-zagolovok {
+    font-family: "Roboto"; font-size: 30px; font-weight: 400; color:#444;
 }
 
-.posOne {
-    background-color: aqua;
+.calc-from-to {
+    display: flex;
+    flex-direction: row;
 }
+
+.calc-from-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 60px;
+    width: 350px;
+}
+
+.calc-titles{
+    font-family: "Roboto"; font-size: 15px; font-weight: 500; color:#AEAEAE;
+}
+
+.calc-from-line {
+    margin-top: 10px;
+    width: 350px;
+    height: 50px;
+    border: 2px solid rgb(181, 181, 181);
+    background-color: rgba(239, 239, 239, 0.766);
+}
+
+.calc-to-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+}
+
+.calc-to-line {
+    margin-top: 10px;
+    width: 350px;
+    height: 50px;
+    border: 2px solid rgb(181, 181, 181);
+    background-color: rgba(239, 239, 239, 0.766);
+}
+
+.calc-type-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    width: 692px;
+}
+
+.calc-type-line {
+    margin-top: 10px;
+    width: 760px;
+    text-align: center;
+    height: 50px;
+    border: 2px solid rgb(181, 181, 181);
+    background-color: rgba(239, 239, 239, 0.766);
+}
+
+.p-icon {
+    display: none;
+}
+
+.p-dropdown {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    font-family: "Roboto"; font-size: 18px; color:#444;
+}
+
+.p-dropdown-filter-container {
+    margin-top: 1px;
+    border: 1px solid rgb(181, 181, 181);
+    background-color: #FFFFFF;
+    border-bottom: none;
+    padding: 3px
+}
+
+.p-dropdown-filter {
+    border-radius: 3px;
+    height: 30px;
+    font-family: "Roboto"; font-size: 17px; font-weight: 400; color:#444;
+}
+
+.p-dropdown-items-wrapper {
+    border: 1px solid rgb(181, 181, 181);
+    border-top: none;
+    background-color: #FFFFFF;
+}
+
+.p-dropdown-item {
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 3px;
+    font-family: "Roboto"; font-size: 16px; font-weight: 400; color:#444;
+}
+
+.p-dropdown-item:hover {
+    background-color: #5897fb;
+    color: white;
+}
+
+.p-dropdown-empty-message {
+    font-family: "Roboto"; font-size: 0.5px; font-weight: 400; color:#444;
+    visibility: hidden;
+}
+
+.p-dropdown-empty-message::after {
+    visibility: visible;
+    font-family: "Roboto"; font-size: 16px; font-weight: 400; color:#444;
+    content: "Ничего не найдено";
+}
+
+.calc-data {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.calc-weight-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+    margin-right: 27px;
+}
+
+.calc-volume-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+    margin-right: 27px;
+    margin-top: -3px;
+}
+
+.calc-amount-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+    margin-right: 27px;
+}
+
+.calc-data-button {
+    margin-top: 19px;
+    width: 170px;
+    height: 50px;
+    border: none;
+    background-color: #58bc51;
+    font-family: "Roboto"; font-size: 18px; font-weight: 500;color: white;
+}
+
+.calc-data .p-inputtext {
+    width: 170px;
+    height: 50px;
+    padding-left: 5px;
+    background-color: rgba(239, 239, 239, 0.766);
+    border: 2px solid rgb(181, 181, 181);
+    font-family: "Roboto"; font-size: 16px; font-weight: 400; color:#444;
+}
+
+.wrong-input{
+    border: 2px solid rgba(255, 0, 0, 0.514) !important;
+}
+
