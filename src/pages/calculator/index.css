@@ -1,31 +1,43 @@
 .calc-page {
     width: 100vw;
+    max-width: 100%;
     height: 100vh;
     background-image: url('https://thumb.tildacdn.com/tild3537-6563-4232-b439-643337356538/-/format/webp/wp3704765-logistics-.jpg');
     background-position: center;
     background-size:cover;    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.calc-page-background-filter {
+.exp {
+    height: 1050px !important;
+    max-height: 100%;
+}
+
+.calc-background {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     width: 100vw;
     max-width: 100%;
-    height: 100vh;
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .calc-main {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 100px;
     width: 800px;
-    height: 500px;
+    height: 450px;
     backdrop-filter: blur(20px) saturate(200%);
     -webkit-backdrop-filter: blur(20px) saturate(200%);
     background-color: rgba(255, 255, 255, 0.91);
-    border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
@@ -78,7 +90,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 40px;
-    width: 692px;
+    width: 760px;
 }
 
 .calc-type-line {
@@ -99,7 +111,12 @@
     align-items: center;
     text-align: center;
     height: 100%;
+    width: 100%;
     font-family: "Roboto"; font-size: 18px; color:#444;
+}
+
+.p-placeholder {
+    font-family: "Roboto"; font-size: 18px; color:#818181;
 }
 
 .p-dropdown-filter-container {
@@ -116,17 +133,24 @@
     font-family: "Roboto"; font-size: 17px; font-weight: 400; color:#444;
 }
 
+.calc-type-block .p-dropdown-items-wrapper{
+    width: 760px;
+}
+
 .p-dropdown-items-wrapper {
+    width: 100%;
     border: 1px solid rgb(181, 181, 181);
     border-top: none;
     background-color: #FFFFFF;
 }
 
 .p-dropdown-item {
-    height: 40px;
-    padding-top: 10px;
+    height: fit-content;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 3px;
     font-family: "Roboto"; font-size: 16px; font-weight: 400; color:#444;
+    text-wrap: wrap;
 }
 
 .p-dropdown-item:hover {
@@ -148,7 +172,7 @@
 .calc-data {
     display: flex;
     flex-direction: row;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .calc-weight-block {
@@ -176,8 +200,12 @@
     margin-right: 27px;
 }
 
+.calc-data-lines {
+    margin-top: 10px;
+}
+
 .calc-data-button {
-    margin-top: 19px;
+    margin-top: 29px;
     width: 170px;
     height: 50px;
     border: none;
@@ -198,3 +226,148 @@
     border: 2px solid rgba(255, 0, 0, 0.514) !important;
 }
 
+.answer {
+    width: 800px;
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.91);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    border-top: 2px solid rgba(151, 151, 151, 0.3);
+    height: 450px;
+}
+
+.answer-from-to {
+    margin-top: 30px;
+    margin-left: 25px;
+    font-family: "Roboto"; font-size: 16px; font-weight: 500; color:#4586F1
+}
+
+.answer-table {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.answer-table table {
+    border: 1px solid #bababa;
+    height: 100%;
+    width: 750px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: "Roboto"; font-size: 14px; font-weight: 400; color:#575757;
+}
+
+.answer-table th {
+    height: 35px;
+    border: 1px solid #bababa;
+    background-color: #77777718;
+}
+
+.answer-table th:nth-child(1) {
+    width: 38px;
+}
+
+.answer-table th:nth-child(5) {
+    width: 80px;
+}
+
+.answer-table td {
+    height: 40px;
+    border: 1px solid #bababa;
+}
+
+.choosed {
+    background-color: #c0f9bc;
+}
+
+.asnwer-result {
+    font-family: "Roboto"; font-size: 25px; font-weight: 400; color:#58bc51;
+    margin-top: 25px;
+    margin-left: 560px;
+}
+
+.answer-button {
+    margin-top: 40px;
+    margin-left: 210px;
+    width: 400px;
+    height: 50px;
+    border: none;
+    background-color: #58bc51;
+    font-family: "Roboto"; font-size: 18px; font-weight: 500;color: white;
+}
+
+.popup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-inner {
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    left: 34%;
+    top: 25%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    width: 500px;
+    height: 400px;
+}
+
+.popup-inner form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+   
+.popup-title {
+    font-family: "Roboto"; font-size: 32px; font-weight: 600;color: rgb(0, 0, 0);
+    margin-top: 50px;
+}
+
+.popup-subtitle {
+    font-family: "Roboto"; font-size: 14px; font-weight: 300;color: rgb(0, 0, 0);
+    margin-top: 10px;
+}
+
+.popup-input-name {
+    width: 370px;
+    height: 50px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding-left: 20px;
+    font-family: "Roboto"; font-size: 16px; font-weight: 400;color: #000000;
+}
+
+.popup-input-phone {
+    width: 395px;
+    height: 55px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+.popup-button {
+    margin-top: 30px;
+    width: 370px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: #58bc51;
+    font-family: "Roboto"; font-size: 18px; font-weight: 500;color: white;
+}
+
+.popup-input-name::placeholder {
+    font-family: "Roboto"; font-size: 16px; font-weight: 300;color: #b6b6b6;
+}
