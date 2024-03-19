@@ -42,8 +42,7 @@ export default function Geoposition() {
                 />
                 <Button variant="contained" className="findRef" onClick={(checkRefCode)}>find</Button>
             </div>
-            <div className='info'>
-            {show === true && (<>
+            {show === true && (<div className='info'>
                 <div className="upperInfo">
                     <table>
                         <tbody>
@@ -106,9 +105,8 @@ export default function Geoposition() {
                         </tbody>
                     </table>
                 </div>
-            </>
-            )}
             </div>
+            )}
             {show === false && refCode !== ""  && (
                 <div className="wrongRef NumberInput">
                     <p className="wrongRefText">Wrong reference number</p>
