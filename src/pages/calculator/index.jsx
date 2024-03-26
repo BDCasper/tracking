@@ -115,10 +115,10 @@ export default function Calculator() {
                     body: JSON.stringify({
                     name: name,
                     phone: phoneNumber,
-                    from:from,
-                    to:to,
+                    from:from.text,
+                    to:to.text,
                     amount:amount,
-                    typeOfGood:typeOfGood,
+                    typeOfGood:typeOfGood.text,
                     weight: weight,
                     volume: volume
                     })
@@ -135,7 +135,7 @@ export default function Calculator() {
                                 <span className="calc-titles">Откуда:</span>
                                 <div className={!checkFrom ? "calc-from-line wrong-input" : "calc-from-line"}>
                                     <Dropdown value={from} onChange={(e) => setFrom(e.target.value)} options={arrOfPlaces} optionLabel="text" placeholder="Выберите.."
-                                        filter valueTemplate="" />
+                                    filter valueTemplate="" className='calc-from-drop'/>
                                 </div>
                             </div>
                             <div className='calc-to-block'>
@@ -221,7 +221,7 @@ export default function Calculator() {
                                 </tbody>
                             </table>
                         </div>
-                        <div className='asnwer-result'>ИТОГО: {price[choose-1]} тг</div>
+                        <div className='asnwer-result'>ИТОГО: {priceMain} тг</div>
                         <Button label="ОФОРМИТЬ ЭКСПРЕСС ДОСТАВКУ" className="answer-button" onClick={togglePop}/>
                     </div>
 
