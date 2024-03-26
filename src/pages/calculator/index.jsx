@@ -5,6 +5,7 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { arrOfPlaces, arrOfTypes } from "./data"
 import { InputMask } from 'primereact/inputmask';
+import { backend } from '../../App';
 
 export default function Calculator() {
     
@@ -26,26 +27,18 @@ export default function Calculator() {
     const [choose, setChoose] = useState("1");
 
     const [price, setPrice] = useState([100000, 200000, 300000, 400000]);
+    const [priceMain, setPriceMain] = useState(0);
 
     const [seen, setSeen] = useState(false)
     const [name, setName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
 
+    const [checkName, setCheckName] = useState(false);
+    const [checkPhone, setCheckPhone] = useState(false);
+
     function togglePop () {
         setSeen(!seen);
     };
-
-    function handleLogin(e) {
-        e.preventDefault()
-        togglePop()
-    }
-
-    //   useEffect (() => {
-    //     (
-    //     async() => {
-    //             console.log(choose)
-    //     })();
-    //   },[choose])
 
       const calculate = async () => {
         setCheckWeight(true);
@@ -69,26 +62,67 @@ export default function Calculator() {
             }
             return;
         }
-        setShow(true);
-        // if(refCode !== "") {
-        //     await fetch(`${backend}/api/find?ref=${refCode}`, {
-        //       headers: { 'Content-Type': 'apppcation/json' }
-        //       // credentials: 'include'
-        //     }).then((res) => {
-        //       if (res && res.status === 200) {
-        //         res.json().then((data) => {
-        //             if(data.data === false) {
-        //                 setShow(false);
-        //             } else {
-        //                 setArrayOfData(data.data)
-        //                 setShow(true);
-        //             }
-        //         });
-        //       } else {
-        //         console.log("No Data");
-        //       }
-        //     })
-        // } else setShow(undefined)
+
+        await fetch(`${backend}/api/calculate`, {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+                  // credentials: 'include',
+                    body: JSON.stringify({
+                    from:from,
+                    to:to,
+                    amount:amount,
+                    typeOfGood:typeOfGood,
+                    weight: weight,
+                    volume: volume
+                    })
+        }).then((res) => {
+            if (res && res.status === 200) {
+                res.json().then((data) => {
+                    setPriceMain(data.price);
+                    setShow(true);
+                    console.log(data)
+                });
+            } else {
+                console.log("No Data");
+            }
+        })
+    }
+    
+    useEffect(() => {
+        (
+        async () => {
+            setName(name.trim());
+        })();
+    }, [name])
+
+    const sendForm = async(e) => {
+        e.preventDefault();
+
+        setCheckName(false);
+        setCheckPhone(false);
+
+        if(name === '' || phoneNumber === '')
+        {
+            if(name === '') setCheckName(true);
+            if(phoneNumber === '') setCheckPhone(true);
+            return;
+        }
+
+        await fetch(`${backend}/api/sign`, {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+                  // credentials: 'include',
+                    body: JSON.stringify({
+                    name: name,
+                    phone: phoneNumber,
+                    from:from,
+                    to:to,
+                    amount:amount,
+                    typeOfGood:typeOfGood,
+                    weight: weight,
+                    volume: volume
+                    })
+        })
     }
 
     return(
@@ -161,7 +195,7 @@ export default function Calculator() {
                                         <td>{from.text}</td>
                                         <td>{from.id} - {to.id}</td>
                                         <td>{to.text}</td>
-                                        <td>{price[0]}</td>
+                                        <td>{priceMain}</td>
                                     </tr>
                                     <tr className={choose === "2" ? "choosed" : ""} onClick={() => setChoose("2")}>
                                         <td><input type="radio" value="2" checked={choose === "2"} onChange={e => setChoose(e.target.value)}/></td>
@@ -197,12 +231,12 @@ export default function Calculator() {
             <>
                 <div className="popup" onClick={togglePop}></div>
                 <div className="popup-inner">
-                    <form onSubmit={handleLogin}>
+                    <form>
                         <div className='popup-title'>Оставьте ваши данные</div>
                         <div className='popup-subtitle'>для того, чтобы получить варианты перевозок</div>
-                        <input className='popup-input-name' type="text" placeholder='Имя' name="name" value={name} onChange={e => setName(e.target.value)} required/>
-                        <InputMask className='popup-input-phone' value={phoneNumber} name="phone" mask="+7 (999) 999-99-99" placeholder="+7 (999) 999-99-99" onChange={e => setPhoneNumber(e.target.value)} required></InputMask>
-                        <Button label="Отправить" className="popup-button"/>
+                        <input className={checkName ? "popup-input-name wrongInput" : "popup-input-name"} type="text" placeholder='Имя' id='name' name="name" value={name} onChange={e => setName(e.target.value)}/>
+                        <InputMask className={checkPhone ? "popup-input-phone wrongInput" : "popup-input-phone"} value={phoneNumber} name="phone" mask="+7 (999) 999-99-99" placeholder="+7 (999) 999-99-99" onChange={e => setPhoneNumber(e.target.value)}/>
+                        <Button type='submit' label="Отправить" className="popup-button" onClick={sendForm}/>
                     </form>
                 </div>
             </>
