@@ -17,4 +17,5 @@ function App() {
 }
 
 export default App;
-export const backend = "http://192.168.152.253:10000"
+export const backend = "http://192.168.168.253:10000"
+//export const backend = ""
