@@ -17,5 +17,5 @@ function App() {
 }
 
 export default App;
-export const backend = "http://192.168.168.253:10000"
-//export const backend = ""
+//export const backend = "http://192.168.168.253:10000"
+export const backend = "https://script.google.com/macros/s/AKfycbwiqIjdO9VXsD_new4mpzRAEpXCWHzbjsfnHIY0Do6jFm6lUJ3FDlVOqpcZ1XoctkgE/exec"

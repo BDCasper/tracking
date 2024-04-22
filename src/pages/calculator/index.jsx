@@ -65,17 +65,17 @@ export default function Calculator() {
             return;
         }
 
-        await fetch(`${backend}/api/calculate`, {
+        await fetch(`${backend}`, {
             method: "POST",
-            headers: { 'Content-Type': 'application/json' },
                   // credentials: 'include',
                     body: JSON.stringify({
-                    from:from,
-                    to:to,
-                    amount:amount,
-                    typeOfGood:typeOfGood,
-                    weight: weight,
-                    volume: volume
+                        action: 'calculate',
+                        from:from,
+                        to:to,
+                        amount:amount,
+                        typeOfGood:typeOfGood,
+                        weight: weight,
+                        volume: volume
                     })
         }).then((res) => {
             if (res && res.status === 200) {
@@ -117,7 +117,6 @@ export default function Calculator() {
 
     const sendForm = async(e) => {
         e.preventDefault();
-
         setCheckName(false);
         setCheckPhone(false);
 
@@ -126,21 +125,22 @@ export default function Calculator() {
             if(name === '') setCheckName(true);
             if(phoneNumber === '') setCheckPhone(true);
             return;
-        }
-
-        await fetch(`${backend}/api/sign`, {
+        } 
+        else setSeen(!seen);
+        
+        await fetch(`${backend}`, {
             method: "POST",
-            headers: { 'Content-Type': 'application/json' },
                   // credentials: 'include',
                     body: JSON.stringify({
-                    name: name,
-                    phone: phoneNumber,
-                    from:from.text,
-                    to:to.text,
-                    amount:amount,
-                    typeOfGood:typeOfGood.text,
-                    weight: weight,
-                    volume: volume
+                        action: 'saveData',
+                        name: name,
+                        phone: "'" + phoneNumber,
+                        from:from.text,
+                        to:to.text,
+                        weight: weight,
+                        volume: volume,
+                        amount:amount,
+                        typeOfGood:typeOfGood.text
                     })
         })
     }
