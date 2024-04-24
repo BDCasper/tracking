@@ -175,7 +175,7 @@
 
     .info {
         width: 90%;
-        height: 60%;
+        height: 60px;
     }
 
     .upperInfo {
@@ -216,6 +216,7 @@
     .information th {
         font-size: 13px;
         height: 100%;
+        border-bottom:1px solid #a7a7a7 ;
     }
     
     .information td{
@@ -224,6 +225,7 @@
         padding: 8px;
         font-size: 13px;
         font-weight: 400;
+        border-bottom:1px solid #a7a7a7;
     }
     
     @media screen and (min-height: 600px){ 
@@ -295,7 +297,7 @@
     
     @media screen and (min-height: 800px){ 
         .information tr {
-            height: 53px;
+            height: 50px;
         }
     }
     
