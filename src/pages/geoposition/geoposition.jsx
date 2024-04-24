@@ -17,16 +17,16 @@ export default function Geoposition() {
     const checkRefCode = async () => {
         if(refCode !== "") {
             setEmptyInput(false);
-            await fetch(`${backend}/api/find?ref=${refCode}`, {
-              headers: { 'Content-Type': 'apppcation/json' }
+            await fetch(`${backend}?action=getRef&ref=${refCode}`, {
             }).then((res) => {
               if (res && res.status === 200) {
                 res.json().then((data) => {
                     if(data.data === false) {
                         setShow(false);
-                        setWrongInput(true)
+                        setWrongInput(true);
                     } else {
-                        setArrayOfData(data.data)
+                        console.log(data);
+                        setArrayOfData(data.data);
                         setShow(true);
                     }
                 });
@@ -36,7 +36,7 @@ export default function Geoposition() {
             })
         } else {
             setEmptyInput(true);
-            setShow(false)
+            setShow(false);
         }
     }
 
