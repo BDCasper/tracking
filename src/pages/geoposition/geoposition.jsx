@@ -97,8 +97,8 @@ export default function Geoposition() {
                     <table>
                         <tbody>
                             <tr>
-                                <th className="leftRow">Реферальный номер</th>
-                                <td>{arrayOfData[0]}</td>
+                                <th className="leftRow" id="firstOneLeft">Реферальный номер</th>
+                                <td id="firstOneLeft">{arrayOfData[0]}</td>
                             </tr>
                             <tr>
                                 <th className="leftRow">Дата получения</th>
