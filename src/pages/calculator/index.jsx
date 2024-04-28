@@ -220,36 +220,36 @@ export default function Calculator() {
                                     <tbody>
                                         <tr className={choose === "1" ? "choosed" : ""} onClick={() => setChoose("1")}>
                                             <td><input type="radio" value="1" checked={choose === "1"} onChange={e => setChoose(e.target.value)} /></td>
-                                            <td>{from.text}</td>
-                                            <td>{from.id} - {to.id}</td>
-                                            <td>{to.text}</td>
-                                            <td>{priceMain}</td>
+                                            <td></td>
+                                            <td>{from.capital} - {to.capital}</td>
+                                            <td></td>
+                                            <td>{price[1]}</td>
                                         </tr>
                                         <tr className={choose === "2" ? "choosed" : ""} onClick={() => setChoose("2")}>
                                             <td><input type="radio" value="2" checked={choose === "2"} onChange={e => setChoose(e.target.value)} /></td>
                                             <td></td>
-                                            <td>{from.short} - {to.short}</td>
-                                            <td></td>
-                                            <td>{price[1]}</td>
+                                            <td>{from.capital} - {to.capital}</td>
+                                            <td>{to.id}</td>
+                                            <td>{price[2]}</td>
                                         </tr>
                                         <tr className={choose === "3" ? "choosed" : ""} onClick={() => setChoose("3")}>
                                             <td><input type="radio" value="3" checked={choose === "3"} onChange={e => setChoose(e.target.value)} /></td>
+                                            <td>{from.id}</td>
+                                            <td>{from.capital} - {to.capital}</td>
                                             <td></td>
-                                            <td>{from.short} - {to.short}</td>
-                                            <td></td>
-                                            <td>{price[2]}</td>
+                                            <td>{price[3]}</td>
                                         </tr>
                                         <tr className={choose === "4" ? "choosed" : ""} onClick={() => setChoose("4")}>
                                             <td><input type="radio" value="4" checked={choose === "4"} onChange={e => setChoose(e.target.value)} /></td>
-                                            <td></td>
-                                            <td>{from.short} - {to.short}</td>
-                                            <td></td>
-                                            <td>{price[3]}</td>
+                                            <td>{from.id}</td>
+                                            <td>{from.capital} - {to.capital}</td>
+                                            <td>{to.id}</td>
+                                            <td>{Math.round(priceMain)}</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div className='asnwer-result'>ИТОГО: {priceMain} тг</div>
+                            <div className='asnwer-result'>ИТОГО: {Math.round(priceMain)}.00 тг</div>
                             <Button label="ОФОРМИТЬ ЭКСПРЕСС ДОСТАВКУ" className="answer-button" onClick={togglePop} />
                         </div>
                     }
@@ -265,8 +265,8 @@ export default function Calculator() {
                                     </thead>
                                     <tbody>
                                         <tr className={choose === "1" ? "choosed" : ""} onClick={() => setChoose("1")}>
-                                            <td>{from.id} <img className='truck' src="assets/images/delivery-truck.png" alt="" /> {to.id}</td>
-                                            <td className='answer-table-price'>Цена: {priceMain} тг</td>
+                                            <td>{from.capital} <img className='truck' src="assets/images/delivery-truck.png" alt="" /> {to.capital}</td>
+                                            <td className='answer-table-price'>Цена: {price[3]} тг</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -276,10 +276,10 @@ export default function Calculator() {
                                     </thead>
                                     <tbody>
                                         <tr className={choose === "2" ? "choosed" : ""} onClick={() => setChoose("2")}>
-                                            <td>{from.id} <img className='truck' src="assets/images/delivery-truck.png" alt="" /> {to.id}</td>
+                                            <td>{from.capital} <img className='truck' src="assets/images/delivery-truck.png" alt="" /> {to.capital}</td>
                                             <td><img className='down-arrow' src="assets/images/down-arrow.png" alt="" /></td>
-                                            <td>{to.text}</td>
-                                            <td className='answer-table-price'>Цена: {priceMain} тг</td>
+                                            <td>{to.id}</td>
+                                            <td className='answer-table-price'>Цена: {price[0]} тг</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -289,8 +289,10 @@ export default function Calculator() {
                                     </thead>
                                     <tbody>
                                         <tr className={choose === "3" ? "choosed" : ""} onClick={() => setChoose("3")}>
-                                            <td>{from.id} <img className='truck' src="assets/images/delivery-truck.png" alt="" /> {to.id}</td>
-                                            <td className='answer-table-price'>Цена: {priceMain} тг</td>
+                                            <td>{from.id}</td>
+                                            <td><img className='down-arrow' src="assets/images/down-arrow.png" alt="" /></td>
+                                            <td>{from.capital} <img className='truck' src="assets/images/delivery-truck.png" alt="" /> {to.capital}</td>
+                                            <td className='answer-table-price'>Цена: {price[1]} тг</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -300,13 +302,17 @@ export default function Calculator() {
                                     </thead>
                                     <tbody>
                                         <tr className={choose === "4" ? "choosed" : ""} onClick={() => setChoose("4")}>
-                                            <td>{from.id} <img className='truck' src="assets/images/delivery-truck.png" alt="" /> {to.id}</td>
-                                            <td className='answer-table-price'>Цена: {priceMain} тг</td>
+                                            <td>{from.id}</td>
+                                            <td><img className='down-arrow' src="assets/images/down-arrow.png" alt="" /></td>
+                                            <td>{from.capital} <img className='truck' src="assets/images/delivery-truck.png" alt="" /> {to.capital}</td>
+                                            <td><img className='down-arrow' src="assets/images/down-arrow.png" alt="" /></td>
+                                            <td>{to.id}</td>
+                                            <td className='answer-table-price'>Цена: {Math.round(priceMain)} тг</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div className='asnwer-result'>ИТОГО: {priceMain} тг</div>
+                            <div className='asnwer-result'>ИТОГО: {Math.round(priceMain)}.00 тг</div>
                             <Button label="ОФОРМИТЬ ЭКСПРЕСС ДОСТАВКУ" className="answer-button" onClick={togglePop} />
                         </div>
                     }
