@@ -1,0 +1,401 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+}
+
+    .tracking {
+        width: 100%;
+        height: 100%;
+        background-image: url('https://thumb.tildacdn.com/tild3537-6563-4232-b439-643337356538/-/format/webp/wp3704765-logistics-.jpg');
+        background-position: center;
+        background-size:cover;
+    }
+    
+    .backgroundFilter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    }
+    
+    .NumberInput {
+        display:inline;
+        margin-top: 50px;
+    }
+    
+    .NumberInput {
+        height: 54px;
+        top: 50px;
+    }
+    
+    .NumberInput-line {
+        height: 200px;
+        width: fit-content;
+    }
+
+    .findRef {
+        height: 57px;
+        left: 3px;
+        background-color: #58bc51 !important;
+    }
+    
+    #filled-search {
+        width: 300px;
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(209, 213, 219, 0.3);
+        border-radius: 4px;
+    }
+    
+    .wrongRef {
+        height: 20px;
+        width: 325px;
+        margin-right: 65px;
+        margin-top: 10px;
+        backdrop-filter: blur(0px) saturate(200%);
+        -webkit-backdrop-filter: blur(0px) saturate(200%);
+        background-color: rgba(255, 71, 71, 0.623);
+        border-radius: 3px;
+        text-align: center;
+        font-size: 16px;font-weight:300;color: rgb(255, 255, 255);
+    }
+    
+    .info {
+        border-radius: 5px;
+        margin-top: 50px;
+        width: 800px;
+        height: 500px;
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.85);
+    }
+    
+    .information {
+        width: 798px;
+        margin-top: 43px;
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(209, 213, 219, 0.3);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    
+    .information table {
+        font-weight: 100;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+    .information th {
+        text-align: left;
+        height: 34px;
+        padding: 8px;
+        font-size: 18px;
+    }
+    
+    .information td{
+        text-align: center;
+        width: 450px;
+        padding: 8px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    
+    .information tr:nth-child(even) {
+        background-color: #dddddd79;
+    }
+    
+    .information .leftRow {
+        border-right: 1px solid rgba(163, 163, 163, 0.75);
+        font-weight: 600;
+    }
+    
+    #lastOneRight {
+        border-bottom-right-radius: 5px;
+    }
+    
+    #lastOneLeft {
+        border-bottom-left-radius: 5px;
+    }
+    
+    .upperInfo {
+        margin-left: 4px;
+        width: 100%;
+    }
+    
+    .upperInfo table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    .upperInfo th {
+        width: 233.3px;
+        text-align: left;
+        padding-left: 5px;
+        padding-top: 10px;
+        font-size: 17px;
+    }
+    
+    .upperInfo td {
+        width: 233.3px;
+        padding-left: 5px;
+        padding-top: 1px;
+        font-size: 16px;
+    }
+    
+    .topRows th:nth-child(n+2) {
+        border-left: 1px solid rgba(163, 163, 163, 0.75);;
+    }
+    
+    .lowRows td:nth-child(n+2) {
+        border-left: 1px solid rgba(163, 163, 163, 0.75);;
+    }
+
+@media screen and (max-width: 1200px) {
+    
+    #filled-search {
+        width: 200px;
+    }
+
+    .wrongRef {
+        height: 20px;
+        width: 230px;
+        margin-top: 10px;
+        backdrop-filter: blur(0px) saturate(200%);
+        -webkit-backdrop-filter: blur(0px) saturate(200%);
+        background-color: rgba(255, 71, 71, 0.623);
+        border-radius: 3px;
+        text-align: center;
+        font-size: 14px;font-weight:300;color: rgb(255, 255, 255);
+    }
+
+    .info {
+        width: 90%;
+        height: 60px;
+    }
+
+    .upperInfo {
+        width: 100%;
+    }
+    
+    .upperInfo table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    .upperInfo th {
+        width: 100px;
+        text-align: left;
+        padding-left: 5px;
+        padding-top: 10px;
+        font-size: 12px;
+    }
+    
+    .upperInfo td {
+        width: 100px;
+        padding-left: 5px;
+        padding-top: 1px;
+        font-size: 12px;
+    }
+
+    .information {
+        width: 99.5%;
+        margin-top: 30px;
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(209, 213, 219, 0.3);
+        border-radius: 5px;
+    }
+
+    .information th {
+        font-size: 13px;
+        height: 100%;
+        border-bottom:1px solid #a7a7a7;
+    }
+    
+    .information td{
+        text-align: center;
+        width: 150px;
+        padding: 8px;
+        font-size: 13px;
+        font-weight: 400;
+        border-bottom:1px solid #a7a7a7;
+    }
+
+    #lastOneLeft {
+        border-bottom: none;
+    }
+
+    #lastOneRight {
+        border-bottom: none;
+    }
+
+    table {
+        border-radius: 5px;
+    }
+
+    @media screen and (min-height: 600px){ 
+        .information tr {
+            height: 35.5px;
+        }
+        
+        .information {
+            width: 99.8%;
+        }
+    }
+    
+    
+    @media screen and (min-height: 640px){ 
+    
+        #filled-search {
+            width: 150px;
+        }
+    
+        .information tr {
+            height: 38px;
+        }
+    
+        .information {
+            margin-top: 30px;
+        }
+    
+        .upperInfo th {
+            font-size: 10px;
+        }
+        .information th {
+            font-size: 10px;
+        }
+    
+        .information td {
+            font-size: 12px;
+        }
+
+        .NumberInput-line {
+            margin-left: 50px;
+        }
+    }
+    
+    @media screen and (min-height: 667px){ 
+        .information tr {
+            height: 41px;
+        }
+
+        .NumberInput-line {
+            margin-left: 50px;
+        }
+    }
+    
+    @media screen and (min-height: 720px){ 
+        .information tr {
+            height: 45px;
+        }
+    
+        .information th {
+            font-size: 13px;
+        }
+    }
+    
+    @media screen and (min-height: 740px){ 
+        .information tr {
+            height: 46px;
+        }
+    }
+    
+    @media screen and (min-height: 800px){ 
+        .information tr {
+            height: 50px;
+        }
+    }
+    
+    
+    @media screen and (min-height: 844px){ 
+        .information tr {
+            height: 54px;
+        }
+    }
+    
+    @media screen and (min-height: 896px) { 
+        .information tr {
+            height: 58px;
+        }
+    }
+    
+    @media screen and (min-height: 914px) { 
+        .information tr {
+            height: 61px;
+        }
+    }
+    
+    @media screen and (min-height: 1024px) { 
+    
+        #filled-search {
+            width: 300px;
+        }
+    
+        .information tr {
+            height: 65px;
+        }
+    
+        .information {
+            margin-top: 30px;
+        }
+    
+        .upperInfo th {
+            font-size: 18px;
+        }
+    
+        .upperInfo td {
+            font-size: 18px;
+        }
+    
+        .information th {
+            font-size: 20px;
+        }
+    
+        .information td {
+            width: 300px;
+            font-size: 20px;
+        }
+    }
+    
+    @media screen and (min-height: 1180px) { 
+        .information tr {
+            height: 77px;
+        }
+    }
+    
+    @media screen and (min-height: 1280px) { 
+        .information tr {
+            height: 84px;
+        }
+    }
+    
+    @media screen and (min-height: 1366px) { 
+        .information tr {
+            height: 89px;
+        }
+    
+        .upperInfo th {
+            font-size: 23px;
+        }
+    
+        .upperInfo td {
+            font-size: 23px;
+        }
+    
+        .information th {
+            font-size: 26px;
+        }
+    
+        .information td {
+            width: 400px;
+            font-size: 28px;
+        }
+    }
+
+}

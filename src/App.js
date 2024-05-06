@@ -1,5 +1,6 @@
 import './App.css';
 import Index from "./pages/calculator/index";
+import Geoposition from "./pages/geoposition/geoposition"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />}/>
+          <Route path="/tracking" element={<Geoposition />}/>
         </Routes>
       </BrowserRouter>
     </div>
