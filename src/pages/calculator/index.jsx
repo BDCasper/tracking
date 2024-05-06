@@ -249,7 +249,7 @@ export default function Calculator() {
                                     </tbody>
                                 </table>
                             </div>
-                            <div className='asnwer-result'>ИТОГО: {Math.round(priceMain)}.00 тг</div>
+                            <div className='asnwer-result'>ИТОГО: {Math.round(priceMain).toLocaleString('ru')}.00 тг</div>
                             <Button label="ОФОРМИТЬ ЭКСПРЕСС ДОСТАВКУ" className="answer-button" onClick={togglePop} />
                         </div>
                     }
@@ -312,7 +312,7 @@ export default function Calculator() {
                                     </tbody>
                                 </table>
                             </div>
-                            <div className='asnwer-result'>ИТОГО: {Math.round(priceMain)}.00 тг</div>
+                            <div className='asnwer-result'>ИТОГО: {Math.round(priceMain).toLocaleString('ru')}.00 тг</div>
                             <Button label="ОФОРМИТЬ ЭКСПРЕСС ДОСТАВКУ" className="answer-button" onClick={togglePop} />
                         </div>
                     }
