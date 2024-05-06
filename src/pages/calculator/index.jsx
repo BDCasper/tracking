@@ -205,12 +205,12 @@ export default function Calculator() {
                 <MediaQuery minWidth={1200}>
                     {show &&
                         <div className='answer'>
-                            <div className='answer-from-to'>Варианты перевозки между: {from.id} - {to.id}</div>
+                            {/* <div className='answer-from-to'>Варианты перевозки между: {from.id} - {to.id}</div> */}
                             <div className='answer-table'>
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th></th>
+                                            {/* <th></th> */}
                                             <th>Заберем</th>
                                             <th>Перевезем</th>
                                             <th>Доставим</th>
@@ -218,7 +218,7 @@ export default function Calculator() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr className={choose === "1" ? "choosed" : ""} onClick={() => setChoose("1")}>
+                                        {/* <tr className={choose === "1" ? "choosed" : ""} onClick={() => setChoose("1")}>
                                             <td><input type="radio" value="1" checked={choose === "1"} onChange={e => setChoose(e.target.value)} /></td>
                                             <td></td>
                                             <td>{from.capital} - {to.capital}</td>
@@ -238,9 +238,9 @@ export default function Calculator() {
                                             <td>{from.capital} - {to.capital}</td>
                                             <td></td>
                                             <td>{price[3]}</td>
-                                        </tr>
+                                        </tr> */}
                                         <tr className={choose === "4" ? "choosed" : ""} onClick={() => setChoose("4")}>
-                                            <td><input type="radio" value="4" checked={choose === "4"} onChange={e => setChoose(e.target.value)} /></td>
+                                            {/* <td><input type="radio" value="4" checked={choose === "4"} onChange={e => setChoose(e.target.value)} /></td> */}
                                             <td>{from.id}</td>
                                             <td>{from.capital} - {to.capital}</td>
                                             <td>{to.id}</td>
@@ -257,9 +257,9 @@ export default function Calculator() {
                 <MediaQuery maxWidth={1200}>
                     {show &&
                         <div className='answer'>
-                            <div className='answer-from-to'>Варианты перевозки между: {from.id} - {to.id}</div>
+                            {/* <div className='answer-from-to'>Варианты перевозки между: {from.id} - {to.id}</div> */}
                             <div className='answer-table'>
-                                <table>
+                                {/* <table>
                                     <thead>
                                         <th><input type="radio" value="1" checked={choose === "1"} onChange={e => setChoose(e.target.value)} />Перевезем</th>
                                     </thead>
@@ -295,11 +295,11 @@ export default function Calculator() {
                                             <td className='answer-table-price'>Цена: {price[1]} тг</td>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </table> */}
                                 <table>
-                                    <thead>
+                                    {/* <thead>
                                         <th><input type="radio" value="4" checked={choose === "4"} onChange={e => setChoose(e.target.value)} />Перевезем</th>
-                                    </thead>
+                                    </thead> */}
                                     <tbody>
                                         <tr className={choose === "4" ? "choosed" : ""} onClick={() => setChoose("4")}>
                                             <td>{from.id}</td>

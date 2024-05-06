@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/calculator" element={<Index />}/>
-          <Route path="/geoposition" element={<Geoposition />}/>
+          <Route path="/tracking" element={<Geoposition />}/>
         </Routes>
       </BrowserRouter>
     </div>
