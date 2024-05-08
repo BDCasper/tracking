@@ -1,15 +1,19 @@
 import './App.css';
 import Geoposition from "./pages/geoposition/geoposition"
+import Header from './components/header/header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Geoposition />}/>
-        </Routes>
-      </BrowserRouter>
+      <div className='App-dark'>
+        <Header/>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Geoposition />}/>
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
